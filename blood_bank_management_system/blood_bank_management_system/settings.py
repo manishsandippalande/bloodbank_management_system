@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z$bsv_faspa)d@j_mglox2q3u$*6%$(m=c&od@0s^ynam&!x6(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bloodbankapp'
+    'bloodbankapp',
+
 ]
 
 MIDDLEWARE = [
