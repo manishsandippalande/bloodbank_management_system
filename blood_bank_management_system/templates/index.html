@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+{% block body %}
+
+<div class="container-poster">
+    {% load static %}
+    <img class="img-poster"
+        src="{% static 'poster.jpg' %}"
+        alt="">
+</div>
+<div class="btns-cont">
+    <!-- DONORS Form -->
+    <div class="donor-part slogans">
+        <h4>“Donate Blood, Share Life.”</h4>
+        <h5>“A Few Minutes of Your Time, a Lifetime for Someone Else.”</h5>
+        <a href="/donors" class="btn btn-success">Donate Blood</a>
+    </div>
+
+    <!-- Patients form -->
+    <div class="patient-part slogans">
+        <h4>“Be a Hero: Donate Blood!”</h4>
+        <h5>“Heroes Don’t Wear Capes; They Donate Blood.”</h5>
+        <a href="/patients" class="btn btn-danger">Withdraw Blood</a>
+    </div>
+</div>
+{% endblock %}

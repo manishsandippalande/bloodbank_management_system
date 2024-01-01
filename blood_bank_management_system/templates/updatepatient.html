@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<div class="container mb-3 padding-l">
+    <h4 class="text-center">UPDATE PATIENT</h4>
+    <form action="/updatepatient_method/{{ data.id }}" method="post" style="border-radius: 15px; background-color: rgba(0, 0, 0, 0.262); padding: 3vh 0vh;">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>Patient Name : </td>
+                <td><input type="text" class="inp" name="patientname" value="{{ data.patient_name }}"></td>
+            </tr>
+            <tr>
+                <td>Gender : </td>
+                <td>
+                    <select name="patientgender" class="inp" id="">
+                        <option value="Male" {% if data.gender == 'Male' %} selected {% endif %}>Male</option>
+                        <option value="Female" {% if data.gender == 'Female' %} selected {% endif %}>Female</option>
+                        <option value="Other" {% if data.gender == 'Other' %} selected {% endif %}>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>BloodGroup : </td>
+                <td>
+                    <select name="patientbg" class="inp" id="">
+                        <option value="A+" {% if data.patient_bloodgroup == 'A+' %} selected {% endif %}>A+</option>
+                        <option value="B+" {% if data.patient_bloodgroup == 'B+' %} selected {% endif %}>B+</option>
+                        <option value="AB+" {% if data.patient_bloodgroup == 'AB+' %} selected {% endif %}>AB+</option>
+                        <option value="A-" {% if data.patient_bloodgroup == 'A-' %} selected {% endif %}>A-</option>
+                        <option value="B-" {% if data.patient_bloodgroup == 'B-' %} selected {% endif %}>B-</option>
+                        <option value="AB-" {% if data.patient_bloodgroup == 'AB-' %} selected {% endif %}>AB-</option>
+                        <option value="O+" {% if data.patient_bloodgroup == 'O+' %} selected {% endif %}>O+</option>
+                        <option value="O-" {% if data.patient_bloodgroup == 'O-' %} selected {% endif %}>O-</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity : </td>
+                <td><input type="number" class="inp" name="quantity" value="{{ data.quantity }}"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Update Patient" class="btn btn-patient-add">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

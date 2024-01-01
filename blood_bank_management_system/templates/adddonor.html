@@ -1,0 +1,50 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<div class="container mb-3 padding-l">
+    <h4 class="text-center">ADD DONOR</h4>
+    <form action="/donors" method="post" style="border-radius: 15px; background-color: rgba(0, 0, 0, 0.262); padding: 3vh 0vh;">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>Donor Name : </td>
+                <td><input type="text" class="inp" name="donorname"></td>
+            </tr>
+            <tr>
+                <td>Gender : </td>
+                <td>
+                    <select name="donorgender" class="inp" id="">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>BloodGroup : </td>
+                <td>
+                    <select name="donorbg" class="inp" id="">
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity : </td>
+                <td><input type="number" class="inp" name="quantity"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Donate Blood" class="btn btn-success fw-bold">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{% endblock %}
